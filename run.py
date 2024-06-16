@@ -12,6 +12,25 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('dc_productivity')
 
+def daily_volume_beauty():
+    """
+    Asks the user to input the unit volume of beauty specific delivery to be processed, this 
+    follows a different path to general delivery.
+    """
+
+    while True:
+
+        beauty_vol = input('Please enter Beauty volumes: \n')
+    
+        daily_vol_bty = beauty_vol.split(",")
+        validate_data(daily_vol_bty)
+
+        if validate_data(daily_vol_bty):
+            print("data is valid for beauty...")
+            break
+    return daily_vol_bty
+
+
 def daily_volume_general():
     """
     Asks the user to input the unit volume of delivery colleagues will be expected to process
@@ -29,23 +48,6 @@ def daily_volume_general():
     return daily_vol_gen
 
 
-def daily_volume_beauty():
-    """
-    Asks the user to input the unit volume of beauty specific delivery to be processed, this 
-    follows a different path to general delivery.
-    """
-
-    while True:
-
-        beauty_vol = input("Please enter Beauty volumes: \n")
-    
-        daily_vol_bty = beauty_vol.split(",")
-        validate_data(daily_vol_bty)
-
-        if validate_data(daily_vol_bty):
-            print("data is valid for beauty...")
-            break
-    return daily_vol_bty
 
 
 
