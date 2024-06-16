@@ -18,7 +18,7 @@ def daily_volume_general():
     """
     while True:
 
-        general_vol = input("Please enter GM Volumes:\n")
+        general_vol = input("Please enter GM Volumes: \n")
 
         daily_vol_gen = general_vol.split(",")
         validate_data(daily_vol_gen)
@@ -37,7 +37,7 @@ def daily_volume_beauty():
 
     while True:
 
-        beauty_vol = input("Please enter Beauty volumes:\n")
+        beauty_vol = input("Please enter Beauty volumes: \n")
     
         daily_vol_bty = beauty_vol.split(",")
         validate_data(daily_vol_bty)
@@ -59,7 +59,7 @@ def validate_data(values):
         if len(values) != 5:
             raise ValueError(f"5 values required, you entered {len(values)}")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data: {e}, please try again. \n")
         return False
 
     return True
@@ -72,20 +72,20 @@ def update_volumes_worksheet_general(data_g):
     """
     Adds the delivery volume to the general merchandise spreadsheet
     """
-    print("Updating General Merchandise spreadsheet...\n")
+    print("Updating General Merchandise spreadsheet... \n")
     delivery_volumes_general_worksheet = SHEET.worksheet('delivery_volumes_general')
     delivery_volumes_general_worksheet.append_row(data_g)
-    print("General Merchandise spreadsheet updated sucessfully...\n")
+    print("General Merchandise spreadsheet updated sucessfully... \n")
 
     
 def update_volumes_worksheet_beauty(data_b):
     """
     Adds the delivery volume to the beauty products spreadsheet
     """
-    print("Updating Beauty products spreadsheet...\n")
+    print("Updating Beauty products spreadsheet... \n")
     delivery_volumes_beauty_worksheet = SHEET.worksheet('delivery_volumes_beauty')
     delivery_volumes_beauty_worksheet.append_row(data_b)
-    print("Beauty products spreadsheet updated sucessfully...\n")
+    print("Beauty products spreadsheet updated sucessfully... \n")
 
 def calculate_staff_requirements_decant(data_g):
     """
@@ -206,46 +206,46 @@ def update_volumes_worksheet_beauty_staff(staff_beauty):
     """
     Updates the Beauty staff schedule with the required number of staff.
     """
-    print("Updating Beauty products spreadsheet...\n")
+    print("Updating Beauty products spreadsheet... \n")
     staff_beauty_worksheet = SHEET.worksheet('staff_beauty')
     staff_beauty_worksheet.append_row(staff_beauty)
-    print("Beauty products spreadsheet updated sucessfully...\n")
+    print("Beauty products spreadsheet updated sucessfully... \n")
 
 def update_volumes_worksheet_putaway_staff(putaway_staff_req):
     """
     Updates the Putaway staff schedule with the required number of staff.
     """
-    print("Updating Putaway staff spreadsheet...\n")
+    print("Updating Putaway staff spreadsheet... \n")
     staff_putaway_worksheet = SHEET.worksheet('staff_putaway')
     staff_putaway_worksheet.append_row(putaway_staff_req)
-    print("Putaway staff spreadsheet updated sucessfully...\n")
+    print("Putaway staff spreadsheet updated sucessfully... \n")
 
 def update_volumes_worksheet_decant_staff(decant_staff_req):
     """
     Updates the Putaway staff schedule with the required number of staff.
     """
-    print("Updating Decant staff spreadsheet...\n")
+    print("Updating Decant staff spreadsheet... \n")
     staff_putaway_worksheet = SHEET.worksheet('staff_decant')
     staff_putaway_worksheet.append_row(decant_staff_req)
-    print("Decant staff spreadsheet updated sucessfully...\n")
+    print("Decant staff spreadsheet updated sucessfully... \n")
 
 def update_volumes_worksheet_inbound_staff(inbound_staff_req):
     """
     Updates the Inbound staff schedule with the required number of staff.
     """
-    print("Updating Inbound staff spreadsheet...\n")
+    print("Updating Inbound staff spreadsheet... \n")
     staff_inbound_worksheet = SHEET.worksheet('staff_inbound')
     staff_inbound_worksheet.append_row(inbound_staff_req)
-    print("Inbound staff spreadsheet updated sucessfully...\n")
+    print("Inbound staff spreadsheet updated sucessfully... \n")
 
 def update_volumes_worksheet_picking_staff(picking_staff_req):
     """
     Updates the Picking staff schedule with the required number of staff.
     """
-    print("Updating Picking staff spreadsheet...\n")
+    print("Updating Picking staff spreadsheet... \n")
     staff_picking_worksheet = SHEET.worksheet('staff_picking')
     staff_picking_worksheet.append_row(picking_staff_req)
-    print("Picking staff spreadsheet updated sucessfully...\n")
+    print("Picking staff spreadsheet updated sucessfully... \n")
 
 
 
@@ -275,9 +275,9 @@ def main():
     
     
     
-print("Welcome to the DC staff schedule assistant...\n")
-print("Data must be all 5 days, each day seperated by a comma..\n")
-print("Example: 14543, 34322, 23253, 23242, 23232\n")
+print("Welcome to the DC staff schedule assistant... \n")
+print("Data must be all 5 days, each day seperated by a comma.. \n")
+print("Example: 14543, 34322, 23253, 23242, 23232 \n")
     
 
 main()
